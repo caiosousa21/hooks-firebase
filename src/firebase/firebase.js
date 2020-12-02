@@ -27,7 +27,11 @@ class Firebase{
     }
 
     async logout(){
-        return await this.auth.signOut();
+        await this.auth.signOut();
+    }
+
+    async resetPassword(email){
+        await this.auth.sendPasswordResetEmail(email);
     }
 }
 
